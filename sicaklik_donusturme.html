@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+  <label for="celsiusInput">Sýcaklýk :</label><br />
+  <input type="number" id="celsiusInput" placeholder="" />
+  <button onclick="hesapla()">Hesapla</button>
+
+  <div id="sonuc"></div>
+
+  <script>
+    function hesapla() {
+      let celsius = parseFloat(document.getElementById('celsiusInput').value);
+      let sonuc = document.getElementById('sonuc');
+
+      if (isNaN(celsius)) {
+        sonuc.innerHTML = "Lütfen sayý girin";
+        return;
+      }
+
+      let fahrenheit = (celsius * 9 / 5) + 32;
+      sonuc.innerHTML = celsius.toFixed(2) + " °C = " + fahrenheit.toFixed(2) + " °F";
+    }
+  </script>
+
+</body>
+
+</html>
